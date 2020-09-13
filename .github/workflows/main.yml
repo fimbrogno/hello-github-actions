@@ -1,5 +1,25 @@
 name: A workflow for my Hello World file
 on: push
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+
+#jobs:
+#  say_hello:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - run: |
+#        echo "Hello ${{ github.event.inputs.name }}!"
+#        echo "- in ${{ github.event.inputs.home }}!"
+
 jobs:
   build:
     name: Hello world action
